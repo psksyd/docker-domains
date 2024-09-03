@@ -65,9 +65,9 @@ func buildDNSMasqConfig(container types.Container, cli *client.Client) string {
 	// by default, we add the container name with .networkname.tld
 	// to the hosts file.
 	if networkName != "" {
-		hosts = append(hosts, "address=/."+name+"."+networkName+dockerDomainExtension+"/"+ip)
+		//hosts = append(hosts, "address=/."+name+"."+networkName+dockerDomainExtension+"/"+ip)
 	} else {
-		hosts = append(hosts, "address=/."+name+dockerDomainExtension+"/"+ip)
+		//hosts = append(hosts, "address=/."+name+dockerDomainExtension+"/"+ip)
 	}
 
 	// specificNames is a comma separated list of hostnames to add to the hosts file.
