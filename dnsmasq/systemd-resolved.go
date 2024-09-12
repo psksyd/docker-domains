@@ -31,7 +31,8 @@ func ConfigureSystemdResolved() {
 	}
 
 	fp.WriteString("[Resolve]\n")
-	fp.WriteString("DNS=" + ipaddr + "\n")
+	fp.WriteString("DNS=." + ipaddr + "\n")
+	fp.WriteString("DNS=8.8.8.8" + "\n")
 	fp.Close()
 
 	// create domain file

@@ -126,6 +126,10 @@ func writeConfig(cli *client.Client) {
 	}
 	defer fp.Close()
 	fp.WriteString(dnsmasq.DNSMasqHeaderConfig)
+	// Add the DNS servers
+	fp.WriteString("server=8.8.8.8\n")
+	fp.WriteString("server=8.8.4.4\n")
+
 	for _, container := range containers {
 		fmt.Println("========>", container.Names[0], container.State)
 		// get the ip address
